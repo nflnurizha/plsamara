@@ -37,7 +37,7 @@
                                             <tr>
                                                 <td>
                                                     <a href="/tambahrekammedis/{{$datum->id_lansia}}" input type="button" class="btn btn-info btn-block" value="Input">Input</a>
-                                                    <a href="/showdatalansia/{{$datum->id_lansia}}" input type="button" class="btn btn-warning btn-block" value="Input">Show</a>
+                                                    <a href="/showdatalansia/{{$datum->id_lansia}}" input type="button" class="btn btn-warning btn-block" value="Input">Show / Update</a>
                                                     <a href="/datalansia/{{$datum->id_lansia}}" input type="submit" class="btn btn-danger btn-block" value="Delete">Delete</a>
                                                 </td>
                                                 <td>{{ucwords($datum->nama)}}</td>

@@ -16,6 +16,7 @@ class inputdatakadercontroller extends Controller
     {
     $validatedData = $request->validate([
         'nama' => 'required',
+        'tempatlahir' => 'required',
         'tanggallahir' => 'required',
         'nohp_kader' => 'required',
         'pendidikan' => 'required',
@@ -27,6 +28,7 @@ class inputdatakadercontroller extends Controller
     $simpan = Kader::create([
         'id_kader' => Auth::user()->id,
     	'nama' => $request->nama,
+        'tempat_lahir' => $request->tempatlahir,
     	'tgllahir' => $request->tanggallahir,
         'nohp_kader' => $request->nohp_kader,
     	'pendidikan' => $request->pendidikan,

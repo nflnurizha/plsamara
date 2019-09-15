@@ -23,4 +23,25 @@ class datakadercontroller extends Controller
         $data -> delete();
         return redirect('datakader');
     }
+    public function show($id)
+    {
+        $data = Kader::find($id);
+        return view ('showdatakader',compact('data'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $data = Kader::find($id);
+       
+        $data->nama = $request->nama; 
+        $data->tempat_lahir = $request->tempatlahir;
+        $data->tgllahir = $request->tanggallahir;
+        $data->nohp_kader = $request->nohp_kader;
+        $data->pendidikan = $request->pendidikan;
+        $data->jabatan = $request->jabatan;
+        $data->alamat = $request->alamat;
+
+        $data->save();
+        return redirect('datakader');
+    }
 }

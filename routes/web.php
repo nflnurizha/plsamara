@@ -32,6 +32,8 @@ Route::get('/home', 'homecontroller@index')->name('home');
 Route::get('/inputdatakader', 'inputdatakadercontroller@index')->name('inputdatakader');	//tampilan input
 Route::post('/inputdatakader', 'inputdatakadercontroller@simpan');	//create
 Route::get('/datakader', 'datakadercontroller@data')->name('datakader');				//tampilan hasil
+Route::get('/showdatakader/{id}', 'datakadercontroller@show')->name('showdatakader');
+Route::put('/showdatakader/{id}', 'datakadercontroller@update');		//tampilan hasil
 	Route::get('/datakader/{id}', 'datakadercontroller@destroy');	//delete
 
 
@@ -39,13 +41,16 @@ Route::get('/datakader', 'datakadercontroller@data')->name('datakader');				//ta
 Route::get('/inputdatalansia', 'inputdatalansiacontroller@index')->name('inputdatalansia');
 Route::post('/inputdatalansia', 'inputdatalansiacontroller@simpan');
 Route::get('/datalansia', 'datalansiacontroller@data')->name('datalansia');				//tampilan hasil
-Route::get('/showdatalansia/{id}', 'datalansiacontroller@show')->name('showdatalansia');				//tampilan hasil
+Route::get('/showdatalansia/{id}', 'datalansiacontroller@show')->name('showdatalansia');
+Route::put('/showdatalansia/{id}', 'datalansiacontroller@update');		//tampilan hasil
 	Route::get('/datalansia/{id}', 'datalansiacontroller@destroy');	//delete
 
 	//MENU REKAM MEDIS
 Route::get('/tambahrekammedis/{id}', 'inputrekammediscontroller@show');	//tampilan input
 Route::post('/tambahrekammedis/{id}', 'inputrekammediscontroller@simpan');
 Route::get('/datarekammedis', 'datarekammediscontroller@data')->name('datarekammedis');				//tampilan hasil
+Route::get('/showrekammedis/{id}', 'datarekammediscontroller@tampil')->name('showrekammedis');
+Route::put('/showrekammedis/{id}', 'datarekammediscontroller@update');		
 	Route::get('/datarekammedis/{id}', 'datarekammediscontroller@destroy');	//delete
 
 });

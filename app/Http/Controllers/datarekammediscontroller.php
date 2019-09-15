@@ -29,4 +29,29 @@ class datarekammediscontroller extends Controller
         return redirect('datarekammedis');
     }
 }
+
+    public function tampil($id)
+    {
+        $data = Rekam_Medis::find($id);
+        return view ('showrekammedis',compact('data'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $data = Rekam_Medis::find($id);
+       
+        $data->tinggi_badan = $request->tb; 
+        $data->berat_badan = $request->bb;
+        $data->sistolik = $request->sistolik;
+        $data->diastolik = $request->diastolik;
+        $data->nadi = $request->nadi;
+        $data->gula_sesaat = $request->gs;
+        $data->gula_puasa = $request->gp;
+        $data->kolesterol_sesaat = $request->ks;
+        $data->kolesterol_puasa = $request->kp;
+        $data->asam_urat = $request->au;
+
+        $data->save();
+        return redirect('datarekammedis');
+    }
 }

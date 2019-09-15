@@ -16,29 +16,33 @@
                                     <table id="multi-filter-select" class="display table table-striped table-hover table-borderless table-data3"  cellspacing="0" width="100%">
                                         <thead>
                                             <tr>
+                                                <th>Menu</th>
                                                 <th>Nama</th>
                                                 <th>Umur</th>
+                                                <th>Tempat Lahir</th>
                                                 <th>Tanggal Lahir</th>
                                                 <th>Nomor HP</th>
                                                 <th>Pendidikan</th>
                                                 <th>Jabatan</th>
                                                 <th>Alamat</th>
-                                                <th>Delete</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach($data as $datum)
                                             <tr>
+                                                <td>
+                                                <a href="/showdatakader/{{$datum->id_kader}}" input type="button" class="btn btn-warning btn-block" value="Input">Show / Update</a>  
+                                                <a href="/datakader/{{$datum->id_kader}}" input type="submit" class="btn btn-danger btn-block" value="Delete">Delete</a>
+                                                </td>
                                                 <td>{{ucwords($datum->nama)}}</td>
+                                                <td>{{ucwords($datum->tempat_lahir)}}</td>
                                                 <td>{{\Carbon\Carbon::parse($datum->tgllahir)->age}}</td>
                                                 <td>{{date_format(date_create($datum->tgllahir), 'd/m/y')}}</td>
                                                 <td>{{$datum->nohp_kader}}</td>
                                                 <td>{{ucwords($datum->pendidikan)}}</td>
                                                 <td>{{($datum->jabatan)? "Kader" : "Ketua"}}</td>
                                                 <td>{{ucwords($datum->alamat)}}</td>
-                                                <td>
-                                                <a href="/datakader/{{$datum->id_kader}}" input type="submit" class="btn btn-danger" value="Delete">Delete</a>
-                                                </td>
+                                                
                                             </tr>
                                             @endforeach
                                         </tbody>

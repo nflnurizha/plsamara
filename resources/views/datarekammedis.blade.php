@@ -16,6 +16,8 @@
                                     <table id="multi-filter-select" class="display table table-striped table-hover table-borderless table-data3"  cellspacing="0" width="100%">
                                         <thead>
                                             <tr>
+                                                <th>Menu</th>
+                                                <th>Tanggal Pemeriksaan</th>
                                                 <th>Nama</th>
                                                 <th>Umur</th>
                                                 <th>Jenis Kelamin</th>
@@ -29,14 +31,17 @@
                                                 <th>Kolesterol Sesaat</th>
                                                 <th>Kolesterol Puasa</th>
                                                 <th>Asam Urat</th>
-                                                <th>Tanggal Pemeriksaan</th>
-                                                <th>Delete</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach($data as $datum)
                                             <tr>
+                                                <td>
+                                                    <a href="/showrekammedis/{{$datum->id_rekam_medis}}" input type="button" class="btn btn-warning btn-block" value="Input">Show / Update</a>
+                                                    <a href="/datarekammedis/{{$datum->id_rekam_medis}}" input type="submit" class="btn btn-danger btn-block" value="Delete">Delete</a>
+                                                </td>
                                                 <td>{{$datum->lansia->nama}}</td>
+                                                <td>{{tgl_indo($datum->created_at)}}</td>
                                                 <td>{{\Carbon\Carbon::parse($datum->lansia->tgllahir)->age}}</td>
                                                 <td>{{($datum->lansia->jenis_kelamin)? "Perempuan" : "Laki-laki"}}</td>
                                                 <td>{{$datum->tinggi_badan}}</td>
@@ -49,10 +54,6 @@
                                                 <td>{{$datum->kolesterol_sesaat}}</td>
                                                 <td>{{$datum->kolesterol_puasa}}</td>
                                                 <td>{{$datum->asam_urat}}</td>
-                                                <td>{{tgl_indo($datum->created_at)}}</td>
-                                                <td>
-                                                    <a href="/datarekammedis/{{$datum->id_rekam_medis}}" input type="submit" class="btn btn-danger" value="Delete">Delete</a>
-                                                </td>
                                             </tr>
                                             @endforeach
                                         </tbody>
