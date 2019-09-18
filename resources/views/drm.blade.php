@@ -7,11 +7,14 @@
 <link href="{{asset('/vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">
 <link href="{{asset('/user/fontawesome/css/all.css/')}}" rel="stylesheet" media="all">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <link href="{{('/vendor/font-awesome-5/css/fontawesome-all.min.css')}}" rel="stylesheet" media="all">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="keywords" content="Millor Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
 <script src="{{asset('/user/js/jquery.min.js')}}"> </script>
 <!--start-smoth-scrolling-->
@@ -71,37 +74,73 @@
 		 </div>
 	</div>
 </div>
+
+<div class="container">
+  <h2></h2>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Info</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">Batas Normal Kesehatan</h3>
+        </div>
+        <div class="modal-body">
+          <h4>Nadi 60-70x / detik</h4>
+          <br>
+          <h4>Gula sesaat < 140mg/dL</h4>
+          <br>
+          <h4>Gula puasa < 100-130mg/dL</h4>
+          <br>
+          <h4>Kolesterol sesaat dan Kolesterol puasa < 200mg/dL (total), < 100mg/dL (LDL), > 50mg/dL (HDL)</h4>
+          <br>
+          <h4>Asam urat 2 - 8,5mg/dL (pria), 2-8mg/dL (wanita)</h4>
+          <br>
+          <h4>*dL = desiliter</h4>
+          <h4>*LDL = kolesterol jahat</h4>
+          <h4>*HDL = kolesterol baik</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="table-responsive m-b-40">
     <table id="multi-filter-select" class="display table table-striped table-hover table-borderless table-data3"  cellspacing="0" width="100%">
         <thead class="thead-dark">
             <tr>
                 <th>Tanggal Pemeriksaan</th>
-                <th>Tinggi Badan</th>
-                <th>Berat Badan</th>
-                <th>Sistolik</th>
-                <th>Diastolik</th>
-                <th>Nadi</th>
-                <th>Gula Sesaat</th>
-                <th>Gula Puasa</th>
-                <th>Kolesterol Sesaat</th>
-                <th>Kolesterol Puasa</th>
-                <th>Asam Urat</th>
+                <th>Tinggi Badan (cm)</th>
+                <th>Berat Badan (kg)</th>
+                <th>Sistolik (mmHg)</th>
+                <th>Diastolik (mmHg)</th>
+                <th>Nadi (detik)</th>
+                <th>Gula Sesaat (mg/dL)</th>
+                <th>Gula Puasa (mg/dL)</th>
+                <th>Kolesterol Sesaat (mg/dL)</th>
+                <th>Kolesterol Puasa (mg/dL)</th>
+                <th>Asam Urat (mg/dL)</th>
             </tr>
         </thead>
         <tbody>
             @foreach($data as $datum)
             <tr>
-                <td>{{tgl_indo($datum->created_at)}}</td>
-                <td>{{$datum->tinggi_badan}}</td>
-                <td>{{$datum->berat_badan}}</td>
-                <td>{{$datum->sistolik}}</td>
-                <td>{{$datum->diastolik}}</td>
-                <td>{{$datum->nadi}}</td>
-                <td>{{$datum->gula_sesaat}}</td>
-                <td>{{$datum->gula_puasa}}</td>
-                <td>{{$datum->kolesterol_sesaat}}</td>
-                <td>{{$datum->kolesterol_puasa}}</td>
-                <td>{{$datum->asam_urat}}</td>
+                <td><center>{{tgl_indo($datum->created_at)}}</center></td>
+                <td><center>{{$datum->tinggi_badan}}</center></td>
+                <td><center>{{$datum->berat_badan}}</center></td>
+                <td><center>{{$datum->sistolik}}</center></td>
+                <td><center>{{$datum->diastolik}}</center></td>
+                <td><center>{{$datum->nadi}}</center></td>
+                <td><center>{{$datum->gula_sesaat}}</center></td>
+                <td><center>{{$datum->gula_puasa}}</center></td>
+                <td><center>{{$datum->kolesterol_sesaat}}</center></td>
+                <td><center>{{$datum->kolesterol_puasa}}</center></td>
+                <td><center>{{$datum->asam_urat}}</center></td>
                 <!-- <td>{{date_diff(date_create($datum->lansia->tgllahir),\Carbon\Carbon::now())->format('%y tahun, %m bulan')}}</td> -->
             </tr>
             @endforeach

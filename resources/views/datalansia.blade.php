@@ -6,9 +6,11 @@
                         <div class="row">
                             <div class="col-lg-12">
                     <div class="row m-t-30">
-                            <div class="alert alert-success">
+                            @if (session('succes'))
+                      <div class="alert alert-success">
                         {{ session('succes') }}
-                            </div>
+                      </div>
+                  @endif
                             <div class="col-md-12">
 
                                 <!-- DATA TABLE-->
@@ -40,14 +42,14 @@
                                                     <a href="/showdatalansia/{{$datum->id_lansia}}" input type="button" class="btn btn-warning btn-block" value="Input">Show / Update</a>
                                                     <a href="/datalansia/{{$datum->id_lansia}}" input type="submit" class="btn btn-danger btn-block" value="Delete">Delete</a>
                                                 </td>
-                                                <td>{{ucwords($datum->nama)}}</td>
-                                                <td>{{ucwords($datum->tempat_lahir)}}</td>
-                                                <td>{{tgl_indo($datum->tgllahir)}}</td>
-                                                <td>{{\Carbon\Carbon::parse($datum->tgllahir)->age}}</td>
-                                                <td>{{$datum->nohp}}</td>
-                                                <td>{{ucwords($datum->nama_keluarga)}}</td>
-                                                <td>{{$datum->nohp_kel}}</td>
-                                                <td>@if($datum->agama==0)
+                                                <td><center>{{ucwords($datum->nama)}}</center></td>
+                                                <td><center>{{ucwords($datum->tempat_lahir)}}</center></td>
+                                                <td><center>{{tgl_indo($datum->tgllahir)}}</center></td>
+                                                <td><center>{{\Carbon\Carbon::parse($datum->tgllahir)->age}}</center></td>
+                                                <td><center>{{$datum->nohp}}</center></td>
+                                                <td><center>{{ucwords($datum->nama_keluarga)}}</center></td>
+                                                <td><center>{{$datum->nohp_kel}}</center></td>
+                                                <td><center>@if($datum->agama==0)
                                                     Islam
                                                     @elseif($datum->agama==1)
                                                     Kristen
@@ -60,11 +62,11 @@
                                                     @else($datum->agama==5)
                                                     Konghucu
                                                     @endif
-                                                </td>
-                                                <td>{{($datum->jenis_kelamin)? "Perempuan" : "Laki-laki"}}</td>
-                                                <td>{{ucwords($datum->alamat)}}</td>
-                                                <td>{{ucwords($datum->pendidikan)}}</td>
-                                                <td>@if($datum->status_perkawinan==0)
+                                                </center></td>
+                                                <td><center>{{($datum->jenis_kelamin)? "Perempuan" : "Laki-laki"}}</center></td>
+                                                <td><center>{{ucwords($datum->alamat)}}</center></td>
+                                                <td><center>{{ucwords($datum->pendidikan)}}</center></td>
+                                                <td><center>@if($datum->status_perkawinan==0)
                                                     Belum Kawin
                                                     @elseif($datum->status_perkawinan==1)
                                                     Kawin
@@ -72,7 +74,7 @@
                                                     Cerai Hidup
                                                     @else($datum->status_perkawinan==3)
                                                     Cerai Mati
-                                                    @endif</td>
+                                                    @endif</center></td>
                                             </tr>
                                             @endforeach
                                         </tbody>

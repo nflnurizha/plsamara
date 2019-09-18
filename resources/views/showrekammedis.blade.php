@@ -98,7 +98,7 @@
                                             </div>
                                     </div>
                                     <div class="card-footer">
-                                        <button type="submit" class="btn btn-primary btn-sm">
+                                        <button type="submit" class="btn btn-warning btn-sm">
                                             <i class="fa fa-dot-circle-o"></i> Edit
                                         </button>
                                         <button type="reset" class="btn btn-danger btn-sm">

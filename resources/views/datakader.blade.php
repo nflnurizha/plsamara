@@ -7,9 +7,11 @@
                         <div class="row">
   <div class="col-lg-12">
                     <div class="row m-t-30">
+                       @if (session('succes'))
                       <div class="alert alert-success">
                         {{ session('succes') }}
-                            </div>
+                      </div>
+                  @endif
                             <div class="col-md-12">
                                 <!-- DATA TABLE-->
                                 <div class="table-responsive m-b-40">
@@ -34,14 +36,14 @@
                                                 <a href="/showdatakader/{{$datum->id_kader}}" input type="button" class="btn btn-warning btn-block" value="Input">Show / Update</a>  
                                                 <a href="/datakader/{{$datum->id_kader}}" input type="submit" class="btn btn-danger btn-block" value="Delete">Delete</a>
                                                 </td>
-                                                <td>{{ucwords($datum->nama)}}</td>
-                                                <td>{{ucwords($datum->tempat_lahir)}}</td>
-                                                <td>{{\Carbon\Carbon::parse($datum->tgllahir)->age}}</td>
-                                                <td>{{date_format(date_create($datum->tgllahir), 'd/m/y')}}</td>
-                                                <td>{{$datum->nohp_kader}}</td>
-                                                <td>{{ucwords($datum->pendidikan)}}</td>
-                                                <td>{{($datum->jabatan)? "Kader" : "Ketua"}}</td>
-                                                <td>{{ucwords($datum->alamat)}}</td>
+                                                <td><center>{{ucwords($datum->nama)}}</center></td>
+                                                <td><center>{{\Carbon\Carbon::parse($datum->tgllahir)->age}}</center></td>
+                                                <td><center>{{ucwords($datum->tempat_lahir)}}</center></td>
+                                                <td><center>{{date_format(date_create($datum->tgllahir), 'd/m/y')}}</center></td>
+                                                <td><center>{{$datum->nohp_kader}}</center></td>
+                                                <td><center>{{ucwords($datum->pendidikan)}}</center></td>
+                                                <td><center>{{($datum->jabatan)? "Kader" : "Ketua"}}</center></td>
+                                                <td><center>{{ucwords($datum->alamat)}}</center></td>
                                                 
                                             </tr>
                                             @endforeach

@@ -7,10 +7,13 @@
                         <div class="row">
                             <div class="col-lg-12">
                     <div class="row m-t-30">
-                        <div class="alert alert-success">
+                  @if (session('succes'))
+                      <div class="alert alert-success">
                         {{ session('succes') }}
-                            </div>
+                      </div>
+                  @endif
                             <div class="col-md-12">
+                                
                                 <!-- DATA TABLE-->
                                 <div class="table-responsive m-b-40">
                                     <table id="multi-filter-select" class="display table table-striped table-hover table-borderless table-data3"  cellspacing="0" width="100%">
@@ -21,16 +24,16 @@
                                                 <th>Nama</th>
                                                 <th>Umur</th>
                                                 <th>Jenis Kelamin</th>
-                                                <th>Tinggi Badan</th>
-                                                <th>Berat Badan</th>
-                                                <th>Sistolik</th>
-                                                <th>Diastolik</th>
-                                                <th>Nadi</th>
-                                                <th>Gula Sesaat</th>
-                                                <th>Gula Puasa</th>
-                                                <th>Kolesterol Sesaat</th>
-                                                <th>Kolesterol Puasa</th>
-                                                <th>Asam Urat</th>
+                                                <th>Tinggi Badan (cm)</th>
+                                                <th>Berat Badan (kg)</th>
+                                                <th>Sistolik (mmHg)</th>
+                                                <th>Diastolik (mmHg)</th>
+                                                <th>Nadi (detik)</th>
+                                                <th>Gula Sesaat (mg/dL)</th>
+                                                <th>Gula Puasa (mg/dL)</th>
+                                                <th>Kolesterol Sesaat (mg/dL)</th>
+                                                <th>Kolesterol Puasa (mg/dL)</th>
+                                                <th>Asam Urat (mg/dL)</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -40,20 +43,20 @@
                                                     <a href="/showrekammedis/{{$datum->id_rekam_medis}}" input type="button" class="btn btn-warning btn-block" value="Input">Show / Update</a>
                                                     <a href="/datarekammedis/{{$datum->id_rekam_medis}}" input type="submit" class="btn btn-danger btn-block" value="Delete">Delete</a>
                                                 </td>
-                                                <td>{{$datum->lansia->nama}}</td>
-                                                <td>{{tgl_indo($datum->created_at)}}</td>
-                                                <td>{{\Carbon\Carbon::parse($datum->lansia->tgllahir)->age}}</td>
-                                                <td>{{($datum->lansia->jenis_kelamin)? "Perempuan" : "Laki-laki"}}</td>
-                                                <td>{{$datum->tinggi_badan}}</td>
-                                                <td>{{$datum->berat_badan}}</td>
-                                                <td>{{$datum->sistolik}}</td>
-                                                <td>{{$datum->diastolik}}</td>
-                                                <td>{{$datum->nadi}}</td>
-                                                <td>{{$datum->gula_sesaat}}</td>
-                                                <td>{{$datum->gula_puasa}}</td>
-                                                <td>{{$datum->kolesterol_sesaat}}</td>
-                                                <td>{{$datum->kolesterol_puasa}}</td>
-                                                <td>{{$datum->asam_urat}}</td>
+                                                <td><center>{{tgl_indo($datum->created_at)}}</center></td>
+                                                <td><center>{{$datum->lansia->nama}}</center></td>
+                                                <td><center>{{\Carbon\Carbon::parse($datum->lansia->tgllahir)->age}}</center></td>
+                                                <td><center>{{($datum->lansia->jenis_kelamin)? "Perempuan" : "Laki-laki"}}</center></td>
+                                                <td><center>{{$datum->tinggi_badan}}</center></td>
+                                                <td><center>{{$datum->berat_badan}}</center></td>
+                                                <td><center>{{$datum->sistolik}}</center></td>
+                                                <td><center>{{$datum->diastolik}}</center></td>
+                                                <td><center>{{$datum->nadi}}</center></td>
+                                                <td><center>{{$datum->gula_sesaat}}</center></td>
+                                                <td><center>{{$datum->gula_puasa}}</center></td>
+                                                <td><center>{{$datum->kolesterol_sesaat}}</center></td>
+                                                <td><center>{{$datum->kolesterol_puasa}}</center></td>
+                                                <td><center>{{$datum->asam_urat}}</center></td>
                                             </tr>
                                             @endforeach
                                         </tbody>
