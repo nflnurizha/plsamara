@@ -17,7 +17,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
     <div class="item active">
-      <center><img src="/images/icon/LogoSkripsiOpay3.png" style="width:100%;"></center>
+      <center><img src="/images/icon/LogoSkripsiOpay2.png" style="width:100%;"></center>
     </div>
 
     <div class="item">

@@ -89,6 +89,8 @@
           <h3 class="modal-title">Batas Normal Kesehatan</h3>
         </div>
         <div class="modal-body">
+          <h4>Tensi Darah < 150/90mmHg</h4>
+          <br>
           <h4>Nadi 60-70x / detik</h4>
           <br>
           <h4>Gula sesaat < 140mg/dL</h4>
