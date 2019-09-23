@@ -60,10 +60,10 @@
 		 </div>	
 		 <div  class="banner-bottom">
 		 	<div class="col-md-6 banner-left">
-		 		<h2>POSYANDU</h2>
-		 		<h2>LANSIA</h2>
-		 		<h2>SAMARA</h2>
-		 		<p>Jalan Saikin, RW 08 Pondok Pinang</p>
+		 		<h1><font color="#bdecb6">POSYANDU</font></h1>
+                <h1><font color="#bdecb6">LANSIA</font></h1>
+                <h1><font color="#bdecb6">SAMARA</font></h1>
+                <h5><font color="#bdecb6">Jalan Saikin, RW 08 Pondok Pinang</font></h5>
 		 	</div>
 		 	<div class="col-md-6 banner-right">
 		 		<div class="app-img">
